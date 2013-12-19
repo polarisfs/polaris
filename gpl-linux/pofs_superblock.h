@@ -1,4 +1,4 @@
-
+/* Jia Qiang Xu <jiaqiangxu.udel@gmail.com> */
 
 typedef sturct pofs_superblock posuperblock
 
