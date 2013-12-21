@@ -18,17 +18,18 @@ Errno reserveJournalArea(JournalFile * jfP, BlockType btype);
 
 Errno releaseJouralArea(JournalFile * jfP, BlockType btype);
 
-Errno getCommitLsn { return commitLsn;}
+Errno getCommitLsn(JournalUpdate * jlogger) { return jlogger->commitLsn;}
 
-Errno getMinBufLsn { return minBufLsn; }
+Errno getMinBufLsn(JournalUpdate * jlogger) { return jlogger->minBufLsn; }
 
-Errno getMaxBufLsn { return maxBufLsn; }
+Errno getMaxBufLsn(JournalUpdate * jlogger) { return jlogger->maxBufLsn; }
  
 struct journallogger{
 
   JournalFile * jfp;
   LSN minBufLsn;
   LSN maxBufLsn;
+  LSN commitLsn;
   JournalUpdate * nextJournalUpdate;
   JournalUpdate * prevJournalUpdate;
 
